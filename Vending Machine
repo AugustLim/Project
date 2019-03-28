@@ -1,0 +1,175 @@
+/*
+
+Objectives:
+1. Write classes that utilize multiple user defined classes
+2. Write multiple classes that implement an interface
+3. Use Git to manage the source code and submit the project
+
+Project Details:
+For this project you will create a program to run a virtual vending machine. The vending machine will vend a minimum of
+ six items of which no more than one third shall have the same price. From the user's perspective the vending machine 
+ will be arranged in row/column fashion with the rows labeled A through Z and the columns labeled 1 through 9.
+
+~ ~ ~ ~ ~ ~
+
+Do String A1, A2, A3, B1... = [Insert Name of Product]
+getName just prints the value of the variable A1, A2, A3, etc.
+getPrice ... (HOW DO I ASSIGN MULTIPLE DIFFERENT VALUES TO A VARIABLE?)
+Each item should have three different variables: name, price, stock
+- Suggestion: Make a class called Item that has String name, double price, int stock
+- Wait a sec, implement has the methods for a class... can I use the implement for a method/class
+
+*/
+
+import java.util.Scanner;
+import java.text.NumberFormat;
+
+public class Project {
+	
+	public static void main(String[] args) {
+		Item A1, A2, A3, B1, B2, B3, C1, C2, C3;
+		
+		A1 = new Item();
+		A2 = new Item();
+		A3 = new Item();
+		B1 = new Item();
+		B2 = new Item();
+		B3 = new Item();
+		C1 = new Item();
+		C2 = new Item();
+		C3 = new Item();
+		
+		//creates all the items
+		//turn this into a 2D array (maybe)
+		
+		A1.setName("A");
+		A2.setName("B");
+		A3.setName("C");
+		B1.setName("D");
+		B2.setName("E");
+		B3.setName("F");
+		C1.setName("G");
+		C2.setName("H");
+		C3.setName("I");		
+		
+		//sets the name of each item
+		
+		A1.setPrice(1.00);
+		A2.setPrice(1.00);
+		A3.setPrice(1.00);
+		B1.setPrice(2.00);
+		B2.setPrice(2.00);
+		B3.setPrice(2.00);
+		C1.setPrice(3.00);
+		C2.setPrice(3.00);
+		C3.setPrice(3.00);
+		
+		//sets the price for each item
+		
+		A1.addStock(10);
+		A2.addStock(10);
+		A3.addStock(10);
+		B1.addStock(10);
+		B2.addStock(10);
+		B3.addStock(10);
+		C1.addStock(10);
+		C2.addStock(10);
+		C3.addStock(10);
+		
+		//sets the stock for each item
+		
+		NumberFormat dollar = NumberFormat.getCurrencyInstance();
+		
+		//allows number to be formatted like currency
+		
+		System.out.println("Vending Machine:");
+		System.out.println("A1 - " + A1.getName());
+		System.out.println("Price: " + dollar.format(A1.getPrice()));
+		System.out.println("Stock: " + A1.getStock());
+		System.out.println();
+	
+		System.out.println("A2 - " + A2.getName());
+		System.out.println("Price: " + dollar.format(A2.getPrice()));
+		System.out.println("Stock: " + A2.getStock());
+		System.out.println();
+		
+		System.out.println("A3 - " + A3.getName());
+		System.out.println("Price: " + dollar.format(A3.getPrice()));
+		System.out.println("Stock: " + A3.getStock());
+		System.out.println();
+	
+		System.out.println("B1 - " + B1.getName());
+		System.out.println("Price: " + dollar.format(B1.getPrice()));
+		System.out.println("Stock: " + B1.getStock());
+		System.out.println();
+		
+		System.out.println("B2 - " + B2.getName());
+		System.out.println("Price: " + dollar.format(B2.getPrice()));
+		System.out.println("Stock: " + B2.getStock());
+		System.out.println();
+		
+		System.out.println("B3 - " + B3.getName());
+		System.out.println("Price: " + dollar.format(B3.getPrice()));
+		System.out.println("Stock: " + B3.getStock());
+		System.out.println();
+		
+		System.out.println("C1 - " + C1.getName());
+		System.out.println("Price: " + dollar.format(C1.getPrice()));
+		System.out.println("Stock: " + C1.getStock());
+		System.out.println();
+		
+		System.out.println("C2 - " + C2.getName());
+		System.out.println("Price: " + dollar.format(C2.getPrice()));
+		System.out.println("Stock: " + C2.getStock());
+		System.out.println();
+		
+		System.out.println("C3 - " + C3.getName());
+		System.out.println("Price: " + dollar.format(C3.getPrice()));
+		System.out.println("Stock: " + C3.getStock());
+		System.out.println();
+		
+		//Shows all the options
+		
+		Scanner scan = new Scanner(System.in);
+		String order;
+		
+		do {
+		System.out.println("Buy something plz UwU");
+		order = scan.next();
+
+		//sets order equal to whatever user types in
+		
+		switch (order)
+		{
+			case "A1":
+				A1.vend();
+				System.out.println();
+				break;
+			case "A2":
+				A2.vend();
+				System.out.println();
+				break;
+			case "Leave":
+				System.out.println("Sayonara");
+				break;
+			default:
+				System.out.println("Nani?!");
+				System.out.println();
+		}
+		}
+		while (!order.equals("Leave"));
+		
+		//Just make this entire thing the menu? Jut give all the options including check stock and etc.?
+		
+		/*boolean maybe;
+		int stockboi;
+		
+		maybe = A1.canVend();
+		A1.vend();
+		stockboi = A1.getStock();
+		
+		System.out.println(maybe);
+		System.out.println(stockboi);*/
+	}
+
+}
