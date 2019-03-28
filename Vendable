@@ -1,0 +1,17 @@
+public interface Vendable 
+{
+	public String getName();
+	// returns the name of the item to vend
+	public double getPrice();
+	// returns the price of the vendable
+	public void setPrice(double newPrice);
+	// sets the vendable's price to newPrice
+	public int getStock();
+	// returns the number of items the vendable has
+	public void addStock(int newStock);
+	// adds newStock to the existing stock
+	public boolean canVend();
+	// returns True when there is stock to vend. Otherwise returns false
+	public boolean vend();
+	// returns True and reduces stock by one if vending is successful, otherwise return false
+}
