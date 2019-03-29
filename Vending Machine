@@ -1,5 +1,7 @@
 /*
 
+https://doc.lagout.org/programmation/Java/Java%20Software%20Solutions_%20Foundations%20of%20Program%20Design%20%287th%20ed.%29%20%5BLewis%207%20Loftus%202011-03-10%5D.pdf
+
 Objectives:
 1. Write classes that utilize multiple user defined classes
 2. Write multiple classes that implement an interface
@@ -42,15 +44,15 @@ public class Project {
 		//creates all the items
 		//turn this into a 2D array (maybe)
 		
-		A1.setName("A");
-		A2.setName("B");
-		A3.setName("C");
-		B1.setName("D");
-		B2.setName("E");
-		B3.setName("F");
-		C1.setName("G");
-		C2.setName("H");
-		C3.setName("I");		
+		A1.setName("Cake");
+		A2.setName("Kimchi");
+		A3.setName("Tuna Salad");
+		B1.setName("Pad Thai");
+		B2.setName("Chicken");
+		B3.setName("Udon");
+		C1.setName("Yakisoba");
+		C2.setName("Anthony");
+		C3.setName("Pho");		
 		
 		//sets the name of each item
 		
@@ -131,33 +133,119 @@ public class Project {
 		//Shows all the options
 		
 		Scanner scan = new Scanner(System.in);
-		String order;
+		int order;
 		
 		do {
-		System.out.println("Buy something plz UwU");
-		order = scan.next();
+		System.out.println("Here are your options:");
+		System.out.println("1. Buy");
+		System.out.println("2. Check name");
+		System.out.println("3. Check stock");
+		System.out.println("4. Check price");
+		System.out.println("5. Add stock");
+		System.out.println("6. Change price");
+		System.out.println("7. Leave");
+
+		order = scan.nextInt();
 
 		//sets order equal to whatever user types in
 		
 		switch (order)
 		{
-			case "A1":
-				A1.vend();
+			case 1:
+				System.out.println("Buy something:");
+				System.out.println("1. A1");
+				System.out.println("2. A2");
+				System.out.println("3. A3");
+				System.out.println("4. B1");
+				System.out.println("5. B2");
+				System.out.println("6. B3");
+				System.out.println("7. C1");
+				System.out.println("8. C2");
+				System.out.println("9. C3");
+				System.out.println("10. Back");
+				order = scan.nextInt();
+				switch(order)
+				{
+				case 1:
+					A1.vend();
+					System.out.println("Vended");
+					break;
+				case 2:
+					A2.vend();
+					System.out.println("Vended");
+					break;
+				case 3:
+					A3.vend();
+					System.out.println("Vended");
+					break;
+				case 4:
+					B1.vend();
+					System.out.println("Vended");
+					break;
+				case 5:
+					B2.vend();
+					System.out.println("Vended");
+					break;
+				case 6:
+					B3.vend();
+					System.out.println("Vended");
+					break;
+				case 7:
+					C1.vend();
+					System.out.println("Vended");
+					break;
+				case 8:
+					C2.vend();
+					System.out.println("Vended");
+					break;
+				case 9:
+					C3.vend();
+					System.out.println("Vended");
+					break;
+				case 10:
+					break;
+				default:
+					System.out.println("Confusion");
+					break;
+				}
+				break;
+			case 2:
+				System.out.println("Checking name");
+				System.out.println("A1 - " + A1.getName());
+				System.out.println("A2 - " + A2.getName());
+				System.out.println("A3 - " + A3.getName());
+				System.out.println("B1 - " + B1.getName());
+				System.out.println("B2 - " + B2.getName());
+				System.out.println("B3 - " + B3.getName());
+				System.out.println("C1 - " + C1.getName());
+				System.out.println("C2 - " + C2.getName());
+				System.out.println("C3 - " + C3.getName());
 				System.out.println();
 				break;
-			case "A2":
-				A2.vend();
-				System.out.println();
+			case 3:
+				System.out.println("Checking stock");
+				System.out.println("A1 - " + A1.getStock());
+				System.out.println("A2 - " + A2.getStock());
+				System.out.println("A3 - " + A3.getStock());
 				break;
-			case "Leave":
+			case 4:
+				System.out.println("Checking price");
+				break;
+			case 5:
+				System.out.println("Adding stock");
+				break;
+			case 6:
+				System.out.println("Changing price");
+				break;
+			case 7:
 				System.out.println("Sayonara");
 				break;
 			default:
-				System.out.println("Nani?!");
-				System.out.println();
+				System.out.println("confusion");
+				break;
 		}
 		}
-		while (!order.equals("Leave"));
+		while (order != 7);
 		
 		//Just make this entire thing the menu? Jut give all the options including check stock and etc.?
 		
